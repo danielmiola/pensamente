@@ -1,0 +1,18 @@
+.panel-p {
+  border-color: #666;
+}
+.panel-p > .panel-heading {
+  color: #fff;
+  background-color: #555;
+  border-color: #666;
+}
+.panel-p > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #666;
+}
+.panel-p > .panel-heading .badge {
+  color: #fff;
+  background-color: #555;
+}
+.panel-p > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #666;
+}

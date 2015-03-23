@@ -1,7 +1,21 @@
 <footer>
 	<div class="container">
+		<div class="row">
+			<div class="col-md-6 text-center">
+				<h4>Links úteis</h4>
+				<p><%= link_to "Quem somos", "sobre" %></p>
+				<p><%= link_to "Perguntas frequentes", "faq" %></p>
+				<p><%= link_to "Contato", "contato", 'data-no-turbolink' => true %></p>
+			</div>
+			<div class="col-md-6 text-center">
+				<h4>Mídias sociais</h4>
+				<p><%= link_to '<i class="fa fa-facebook-square"></i> Facebook'.html_safe, 'http://www.facebook.com' %></p>
+				<p><%= link_to '<i class="fa fa-instagram"></i> Instagram'.html_safe, 'http://www.instagram.com' %></p>
+				<p><%= link_to '<i class="fa fa-twitter-square"></i> Twitter'.html_safe, 'http://www.twitter.com' %></p>
+			</div>
+		</div>
 	</div>
-	<div class="dev">
-		<p>Site desenvolvivo por daniel.miola@hotmail.com</p>
+	<div class="text-center">
+		Site desenvolvivo por daniel.miola@hotmail.com
 	</div>
 </footer>

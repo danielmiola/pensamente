@@ -1,0 +1,49 @@
+/* google maps */
+
+function loadScript() {
+  var script = document.createElement("script");
+  script.src = "http://maps.googleapis.com/maps/api/js?callback=initialize";
+  document.body.appendChild(script);
+}
+
+
+var map;
+function initialize() {
+  google.maps.visualRefresh = true;
+	var geocoder = new google.maps.Geocoder();
+	var address = $('#map-input').text(); /* change the map-input to your address */
+	var mapOptions = {
+    	zoom: 15,
+    	mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+	
+  	if (geocoder) {
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+          map.setCenter(results[0].geometry.location);
+
+            var infowindow = new google.maps.InfoWindow(
+                {
+                  content: address,
+                  map: map,
+                  position: results[0].geometry.location,
+                });
+
+            var marker = new google.maps.Marker({
+                position: results[0].geometry.location,
+                map: map, 
+                title:address
+            }); 
+
+          } else {
+          	alert("No results found");
+          }
+        }
+      });
+	}
+}
+
+window.onload = loadScript;
+/* end google maps */
